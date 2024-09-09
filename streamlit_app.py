@@ -15,7 +15,7 @@ st.set_page_config(
 
 # Set the title that appears at the top of the page.
 '''
-# :movie_camera: Threads Video Downloader dashboard
+# :movie_camera: Threads Video Downloader
 
 Insira o link do Threads que você deseja extrair o vídeo.
 '''
@@ -24,7 +24,10 @@ opts = ChromeOptions()
 opts.add_argument("--headless")
 driver = webdriver.Chrome(options=opts)
 url = st.text_input('url')
-driver.get(url)
-video = driver.find_element(By.CSS_SELECTOR, 'video')
-video_url = video.get_attribute('src')
-st.write(video_url)
+try:
+    driver.get(url)
+    video = driver.find_element(By.CSS_SELECTOR, 'video')
+    video_url = video.get_attribute('src')
+    st.write(video_url)
+except:
+    st.write('Insira o link que deseja extrair o video.')
