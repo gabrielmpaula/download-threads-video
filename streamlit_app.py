@@ -1,5 +1,6 @@
 import streamlit as st
 import os
+from io import BytesIO
 from selenium import webdriver
 from selenium.webdriver import ChromeOptions
 from selenium.webdriver.common.by import By
@@ -32,6 +33,9 @@ try:
     ## URL do vídeo
     Clique no link abaixo para fazer download do video.
     ''')
-    st.html(f"<a href='{video_url}' download>Download</a>")
+    video_data = requests.get(video_url)
+    buffer = BytesIO()
+    buffer.write(video_data.content)
+    st.download_button('Download CSV', buffer, 'video/mp4')
 except:
     st.write('Insira o link que deseja extrair o video.')
