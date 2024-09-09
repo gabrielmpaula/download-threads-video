@@ -32,7 +32,7 @@ try:
     video = driver.find_element(By.CSS_SELECTOR, 'video')
     video_url = video.get_attribute('src')
     st.markdown('''
-    ## URL do vídeo
+    ## Download pronto!
     Clique no link abaixo para fazer download do video.
     ''')
     video_data = requests.get(video_url)
