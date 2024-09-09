@@ -1,5 +1,6 @@
 import streamlit as st
 import os
+import requests
 from io import BytesIO
 from selenium import webdriver
 from selenium.webdriver import ChromeOptions
