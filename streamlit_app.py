@@ -31,7 +31,7 @@ try:
     st.markdown(f'''
     ## URL do vídeo
     Clique no link abaixo para fazer download do video.
-    <a href="{video_url}" download>Download</a>
-    ''')
+    '''
+    st.html(f'<a href="{video_url}" download>Download</a>')
 except:
     st.write('Insira o link que deseja extrair o video.')
