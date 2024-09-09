@@ -28,7 +28,7 @@ try:
     driver.get(url)
     video = driver.find_element(By.CSS_SELECTOR, 'video')
     video_url = video.get_attribute('src')
-    st.markdown(f''
+    st.markdown('''
     ## URL do vídeo
     Clique no link abaixo para fazer download do video.
     ''')
