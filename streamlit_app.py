@@ -18,7 +18,7 @@ st.set_page_config(
 # Set the title that appears at the top of the page.
 st.markdown('''
 # :movie_camera: Threads Video Downloader
-## Criado por [@Gabeira]|(https://beacons.ai/gabeira)
+### Criado por [@Gabeira](https://beacons.ai/gabeira)
 Insira o link do Threads que você deseja extrair o vídeo.
 '''
 )
