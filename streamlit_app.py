@@ -20,8 +20,7 @@ st.markdown('''
 # :movie_camera: Threads Video Downloader
 ### Criado por [@Gabeira](https://beacons.ai/gabeira)
 
-Insira o link do Threads que você deseja extrair o vídeo.
-'''
+Insira o link do Threads que você deseja extrair o vídeo.'''
 )
 
 opts = ChromeOptions()
