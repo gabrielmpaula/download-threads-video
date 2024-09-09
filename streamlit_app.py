@@ -26,7 +26,7 @@ opts = ChromeOptions()
 opts.add_argument("--headless")
 driver = webdriver.Chrome(options=opts)
 
-st.markdown('**Insira o link do Threads que você deseja extrair o vídeo:**)
+st.markdown('**Insira o link do Threads que você deseja extrair o vídeo:**')
 url = st.text_input('URL', label_visibility='hidden', placeholder='URL do Threads')
 try:
     driver.get(url)
