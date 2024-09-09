@@ -40,4 +40,4 @@ try:
     buffer.write(video_data.content)
     st.download_button('Download', buffer, mime='video/mp4')
 except:
-    st.write('Insira o link que deseja extrair o video.')
+    st.write('URL vazia ou indisponível.')
