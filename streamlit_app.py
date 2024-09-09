@@ -19,25 +19,26 @@ st.set_page_config(
 st.markdown('''
 # :movie_camera: Threads Video Downloader
 ### Criado por [@Gabeira](https://beacons.ai/gabeira)
-Insira o link do Threads que você deseja extrair o vídeo.
 '''
 )
 
 opts = ChromeOptions()
 opts.add_argument("--headless")
 driver = webdriver.Chrome(options=opts)
+
+st.markdown('**Insira o link do Threads que você deseja extrair o vídeo:**)
 url = st.text_input('URL', label_visibility='hidden', placeholder='URL do Threads')
-# try:
-driver.get(url)
-video = driver.find_element(By.CSS_SELECTOR, 'video')
-video_url = video.get_attribute('src')
-st.markdown('''
-## URL do vídeo
-Clique no link abaixo para fazer download do video.
-''')
-video_data = requests.get(video_url)
-buffer = BytesIO()
-buffer.write(video_data.content)
-st.download_button('Download', buffer, mime='video/mp4')
-# except:
-#     st.write('Insira o link que deseja extrair o video.')
+try:
+    driver.get(url)
+    video = driver.find_element(By.CSS_SELECTOR, 'video')
+    video_url = video.get_attribute('src')
+    st.markdown('''
+    ## URL do vídeo
+    Clique no link abaixo para fazer download do video.
+    ''')
+    video_data = requests.get(video_url)
+    buffer = BytesIO()
+    buffer.write(video_data.content)
+    st.download_button('Download', buffer, mime='video/mp4')
+except:
+    st.write('Insira o link que deseja extrair o video.')
