@@ -28,6 +28,10 @@ try:
     driver.get(url)
     video = driver.find_element(By.CSS_SELECTOR, 'video')
     video_url = video.get_attribute('src')
+    st.markdown('''
+    ## URL do vídeo
+    Clique no link abaixo para abrir o vídeo e salva-lo
+    ''')
     st.write(video_url)
 except:
     st.write('Insira o link que deseja extrair o video.')
